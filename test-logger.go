@@ -1,9 +1,10 @@
-package test_utils
+package testutils
 
 import (
-	"context"
 	"os"
 	"time"
+
+	"github.com/onsi/ginkgo/v2"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -21,6 +22,8 @@ var TestLogger = log.
 	Caller().
 	Logger()
 
-func TestLoggerWithContext(ctx context.Context) context.Context {
-	return TestLogger.WithContext(ctx)
+func ConfigureTestLoggerForGinkgo() {
+	TestLogger.Output(ginkgo.GinkgoWriter)
+	log.Logger = TestLogger
+	zerolog.DefaultContextLogger = &TestLogger
 }

@@ -1,7 +1,8 @@
-package test_utils
+package testutils
 
 import (
-	"io/ioutil"
+	"os"
+	"path/filepath"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -12,7 +13,7 @@ func ReadFile(t *testing.T, filePath string) []byte {
 
 	assert.FileExists(t, filePath)
 
-	bytes, err := ioutil.ReadFile(filePath)
+	bytes, err := os.ReadFile(filepath.Clean(filePath))
 	if err != nil {
 		t.Error(err)
 	}

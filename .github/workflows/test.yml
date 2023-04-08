@@ -1,10 +1,10 @@
-name: Build
+name: Test
 on:
   - push
   - pull_request
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
