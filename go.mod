@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
-	github.com/onsi/ginkgo/v2 v2.9.5
+	github.com/onsi/ginkgo/v2 v2.9.7
 	github.com/rs/zerolog v1.29.1
 	github.com/stretchr/testify v1.8.4
 	gorm.io/driver/postgres v1.5.2
