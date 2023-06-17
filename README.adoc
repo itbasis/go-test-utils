@@ -1,0 +1,10 @@
+= test utils
+
+. Used by https://onsi.github.io/ginkgo/[Ginkgo] as test framework
+. Used by https://github.com/DATA-DOG/go-sqlmock[sqlmock] with https://gorm.io/gorm[GORM] for SQL testing
+
+== Get module
+
+```
+go get -u github.com/itbasis/go-test-utils/v2
+```
