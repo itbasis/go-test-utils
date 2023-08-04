@@ -1,10 +1,11 @@
-name: Tests
+name: test Go using asdf
+
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
 
 jobs:
-  tests:
+  test-asdf:
     runs-on: ubuntu-latest
 
     steps:
