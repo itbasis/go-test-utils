@@ -39,7 +39,6 @@ linters:
     - prealloc
     - promlinter
     - revive
-    - structcheck
     - wastedassign
     - tagliatelle
     - tenv
@@ -62,3 +61,7 @@ linters-settings:
     ignore-names:
       - db
       - err
+  revive:
+    rules:
+      - name: dot-imports
+        disabled: true

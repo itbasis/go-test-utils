@@ -12,7 +12,7 @@ import (
 	"moul.io/zapgorm2"
 )
 
-func GetSqlMockGorm() (sqlMock sqlmock.Sqlmock, gormDb *gorm.DB) {
+func GetSQLMockGorm() (sqlMock sqlmock.Sqlmock, gormDb *gorm.DB) {
 	var (
 		db  *sql.DB
 		err error
