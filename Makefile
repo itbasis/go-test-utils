@@ -4,7 +4,6 @@ go-dependencies:
 
 	#
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-	go install github.com/onsi/ginkgo/v2/ginkgo@latest
 	#
 	go install github.com/securego/gosec/v2/cmd/gosec@latest
 	go install golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow@latest
@@ -16,13 +15,12 @@ go-dependencies:
 go-generate: go-dependencies
 	go generate ./...
 
-go-test:
+go-lint:
 	golangci-lint run
+
+go-test:
 	go vet -vettool=$(which shadow) ./...
 	gosec ./...
-	#ginkgo -r -race --cover --coverprofile=coverage-details.out ./...
-	#go tool cover -func=coverage-details.out -o=coverage.out
-	#cat coverage.out
 
-go-all: go-dependencies go-generate go-test
+go-all: go-dependencies go-generate go-lint go-test
 	go mod tidy || :
