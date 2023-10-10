@@ -8,7 +8,7 @@ require (
 	github.com/juju/zaputil v0.0.0-20190326175239-ef53049637ac
 	github.com/onsi/ginkgo/v2 v2.12.1
 	github.com/onsi/gomega v1.28.0
-	gorm.io/driver/postgres v1.5.2
+	gorm.io/driver/postgres v1.5.3
 	gorm.io/gorm v1.25.4
 	moul.io/zapgorm2 v1.3.0
 )
