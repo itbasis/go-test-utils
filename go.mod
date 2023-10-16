@@ -6,7 +6,7 @@ require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/fgrosse/zaptest v1.2.1
 	github.com/juju/zaputil v0.0.0-20190326175239-ef53049637ac
-	github.com/onsi/ginkgo/v2 v2.12.1
+	github.com/onsi/ginkgo/v2 v2.13.0
 	github.com/onsi/gomega v1.28.0
 	gorm.io/driver/postgres v1.5.2
 	gorm.io/gorm v1.25.4
