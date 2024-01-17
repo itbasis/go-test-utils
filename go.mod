@@ -3,7 +3,7 @@ module github.com/itbasis/go-test-utils/v2
 go 1.20
 
 require (
-	github.com/DATA-DOG/go-sqlmock v1.5.1
+	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/fgrosse/zaptest v1.2.1
 	github.com/juju/zaputil v0.0.0-20190326175239-ef53049637ac
 	github.com/onsi/ginkgo/v2 v2.13.2
