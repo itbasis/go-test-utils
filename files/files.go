@@ -1,21 +1,20 @@
 package files
 
 import (
-	"fmt"
+	"log/slog"
 	"os"
 	"path/filepath"
 
-	itbasisTestUtils "github.com/itbasis/go-test-utils/v2"
 	. "github.com/onsi/gomega"
 )
 
 func ReadFile(filePath string) []byte {
-	itbasisTestUtils.TestLogger.Info(fmt.Sprintf("read file: %s", filePath))
+	slog.Info("reading file", slog.String("file", filePath))
 
-	Ω(filePath).Should(BeARegularFile())
+	Expect(filePath).To(BeARegularFile())
 
 	bytes, err := os.ReadFile(filepath.Clean(filePath))
-	Ω(err).Should(Succeed())
+	Expect(err).To(Succeed())
 
 	return bytes
 }

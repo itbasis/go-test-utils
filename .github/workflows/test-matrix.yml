@@ -1,0 +1,34 @@
+name: Matrix tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-matrix:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        go: ["1.22.x", "stable"]
+        continueOnError: [false]
+        include:
+          - go: ">=1.23.0-rc.1"
+            continueOnError: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+          check-latest: true
+
+      - run: make go-all-tests
+
+#      - name: Test Summary
+#        uses: test-summary/action@v2
+#        with:
+#          paths: "junit-report.xml"
+#        if: always()

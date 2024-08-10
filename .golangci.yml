@@ -1,6 +1,7 @@
 #file: noinspection SpellCheckingInspection
 run:
   concurrency: 4
+  modules-download-mode: readonly
 
 # https://golangci-lint.run/usage/configuration/#linters-configuration
 linters:
@@ -26,9 +27,9 @@ linters:
     - funlen
     - gocritic
     - gocyclo
-    - goerr113
+    - err113
     - goimports
-    - gomnd
+    - mnd
     - gomoddirectives
     - gosec
     - govet
@@ -63,6 +64,11 @@ linters-settings:
     ignore-names:
       - db
       - err
+  govet:
+    enable-all: true
+  nolintlint:
+    require-explanation: true
+    require-specific: true
   revive:
     rules:
       - name: dot-imports

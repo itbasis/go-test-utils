@@ -4,8 +4,6 @@ tmp.*
 # Go
 bin/
 report.xml
-go.work
-go.work.sum
 
 # JetBrains
 .idea/*

@@ -1,4 +1,4 @@
-name: test
+name: Tests
 
 on:
   push:
@@ -10,17 +10,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
       - run: go mod tidy && git diff --exit-code go.mod go.sum
 
-  test-asdf:
+  tests:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install asdf & tools
-        uses: asdf-vm/actions/install@v3
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+          check-latest: true
+
+      - run: make go-dependencies
+
+      - run: make go-generate && git diff --exit-code
 
       - run: make go-all-tests
 
@@ -31,35 +39,15 @@ jobs:
 #        if: always()
 #
 #      - name: Upload coverage reports to Codecov
-#        uses: codecov/codecov-action@v3
+#        uses: codecov/codecov-action@v4
 #        with:
 #          token: ${{ secrets.CODECOV_TOKEN }}
-#          files: ./.coverage.out
-
-  test-matrix:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        go: ["1.20.x", "1.21.x"]
-        continueOnError: [false]
-        include:
-          - go: ">=1.22.0-rc.2"
-            continueOnError: true
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: ${{ matrix.go }}
-          check-latest: true
-
-      - run: make go-all-tests
-
-#      - name: Test Summary
-#        uses: test-summary/action@v2
+#          files: ./.coverage-ginkgo.out
+#
+#      - name: Upload test results to Codecov
+#        if: ${{ !cancelled() }}
+#        uses: codecov/test-results-action@v1
 #        with:
-#          paths: "junit-report.xml"
-#        if: always()
+#          token: ${{ secrets.CODECOV_TOKEN }}
+#          files: "junit-report.xml"
+#          verbose: true
