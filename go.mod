@@ -1,4 +1,4 @@
-module github.com/itbasis/go-test-utils/v2
+module github.com/itbasis/go-test-utils/v3
 
 go 1.22
 
