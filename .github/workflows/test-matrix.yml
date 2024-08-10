@@ -12,9 +12,9 @@ jobs:
       matrix:
         go: ["1.22.x", "stable"]
         continueOnError: [false]
-        include:
-          - go: ">=1.23.0-rc.1"
-            continueOnError: true
+#        include:
+#          - go: ">=1.23.0-rc.1"
+#            continueOnError: true
 
     steps:
       - uses: actions/checkout@v4
