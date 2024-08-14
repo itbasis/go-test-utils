@@ -1,7 +1,6 @@
 = test utils
-:toc:
+:toc: macro
 ---
-
 
 image:https://img.shields.io/github/go-mod/go-version/itbasis/go-test-utils[GitHub go.mod Go version]
 image:https://img.shields.io/badge/godoc-reference-blue.svg[link=https://pkg.go.dev/github.com/itbasis/go-test-utils]
@@ -10,6 +9,8 @@ https://goreportcard.com/report/github.com/itbasis/go-test-utils[image:https://g
 
 * Used by link:https://onsi.github.io/ginkgo/[Ginkgo] as test framework
 * Used by link:https://github.com/DATA-DOG/go-sqlmock[sqlmock] and link:https://gorm.io/gorm[GORM] for SQL testing
+
+toc::[]
 
 == Install module
 
