@@ -20,7 +20,44 @@ go get -u github.com/itbasis/go-test-utils/v4
 
 == File utils
 
-* link:files/files.go[] - checks if the path is a regular file and reads its contents
+* link:files/files.go[] - Reads the contents of a file and checks that there was no error while reading.
+
+Real file system:
+[source,go]
+----
+package demo_test
+
+import (
+	"os"
+
+	"github.com/itbasis/go-test-utils/v4/files"
+	"github.com/onsi/ginkgo/v2"
+)
+
+var _ = ginkgo.Describe("Real OS", func(){
+	content := files.ReadFile(os.ReadFile, "example.txt")
+})
+----
+
+Embedded File System:
+[source,go]
+----
+package demo_test
+
+import (
+	"embed"
+
+	"github.com/itbasis/go-test-utils/v4/files"
+	"github.com/onsi/ginkgo/v2"
+)
+
+//go:embed example.txt
+var testData embed.FS
+
+var _ = ginkgo.Describe("Real OS", func(){
+	content := files.ReadFile(testData.ReadFile, "example.txt")
+})
+----
 
 == Database utils
 
@@ -33,7 +70,7 @@ go get -u github.com/itbasis/go-test-utils/v4
 
 [source,go]
 ----
-package demo
+package demo_test
 
 import (
 	"testing"
@@ -50,7 +87,7 @@ Custom slog options
 
 [source,go]
 ----
-package demo
+package demo_test
 
 import (
 	"log/slog"
@@ -59,7 +96,7 @@ import (
 	"github.com/itbasis/go-test-utils/v4/ginkgo"
 )
 
-func TestSuite(t *testing.T) {
+func TestDemoSuite(t *testing.T) {
 	ginkgo.InitGinkgoSuiteWithSlogOptions(t, "Sample Suite", &slog.HandlerOptions{
 		Level: slog.LevelDebug,
 		AddSource: false,

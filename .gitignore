@@ -3,7 +3,9 @@ tmp.*
 
 # Go
 bin/
-report.xml
+coverage-*.*
+ginkgo-*.*
+junit-report.xml
 
 # JetBrains
 .idea/*

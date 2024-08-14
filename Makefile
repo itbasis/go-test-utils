@@ -1,3 +1,6 @@
+go-all: go-update go-generate go-all-tests
+go-all-tests: go-lint go-unit-tests
+
 go-dependencies:
 	$(eval GOBIN=$(shell go env GOPATH 2>/dev/null)/bin)
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GOBIN) latest
@@ -7,20 +10,16 @@ go-dependencies:
 go-update: go-dependencies
 	go mod tidy && go get -t -v -u ./...
 
-go-generate: go-dependencies
+go-generate:
 	go generate ./...
 	$(MAKE) go-update
 
-go-lint: go-dependencies
+go-lint:
 	golangci-lint run
 
-go-test: go-lint
-	#ginkgo -race --cover --coverprofile=.coverage-ginkgo.out --junit-report=junit-report.xml ./...
-	#go tool cover -func=.coverage-ginkgo.out -o=.coverage.out
-	#go tool cover -html=.coverage-ginkgo.out -o=coverage.html
-	#cat .coverage.out
+go-unit-tests:
+	ginkgo -race --cover --coverprofile="ginkgo-coverage-unit.out" --junit-report="junit-report.xml" ./...
+	go tool cover -func "ginkgo-coverage-unit.out" -o "coverage-unit.out"
+	go tool cover -html "ginkgo-coverage-unit.out" -o "coverage-unit.html"
 
-go-all-tests: go-generate go-lint go-test
-
-go-all: go-dependencies go-all-tests
-	go mod tidy || :
+	cat coverage-unit.out
