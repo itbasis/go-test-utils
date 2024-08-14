@@ -54,7 +54,7 @@ import (
 //go:embed example.txt
 var testData embed.FS
 
-var _ = ginkgo.Describe("Real OS", func(){
+var _ = ginkgo.Describe("Embedded FS", func(){
 	content := files.ReadFile(testData.ReadFile, "example.txt")
 })
 ----
