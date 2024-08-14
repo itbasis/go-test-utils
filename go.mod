@@ -1,4 +1,4 @@
-module github.com/itbasis/go-test-utils/v3
+module github.com/itbasis/go-test-utils/v4
 
 go 1.22
 
@@ -7,7 +7,7 @@ require (
 	github.com/dusted-go/logging v1.3.0
 	github.com/onsi/ginkgo/v2 v2.20.0
 	github.com/onsi/gomega v1.34.1
-	github.com/orandin/slog-gorm v1.3.2
+	github.com/orandin/slog-gorm v1.4.0
 	gorm.io/driver/postgres v1.5.9
 	gorm.io/gorm v1.25.11
 )

@@ -56,6 +56,8 @@ linters:
     - wsl
     - ginkgolinter
     - interfacebloat
+    - sloglint
+    - nilnil
 
 linters-settings:
   varnamelen:

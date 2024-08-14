@@ -1,15 +1,67 @@
 = test utils
+:toc:
 ---
+
+
 image:https://img.shields.io/github/go-mod/go-version/itbasis/go-test-utils[GitHub go.mod Go version]
 image:https://img.shields.io/badge/godoc-reference-blue.svg[link=https://pkg.go.dev/github.com/itbasis/go-test-utils]
 image:https://img.shields.io/github/v/release/itbasis/go-test-utils[GitHub Release]
 https://goreportcard.com/report/github.com/itbasis/go-test-utils[image:https://goreportcard.com/badge/github.com/itbasis/go-test-utils[Go Report Card]]
 
-. Used by https://onsi.github.io/ginkgo/[Ginkgo] as test framework
-. Used by https://github.com/DATA-DOG/go-sqlmock[sqlmock] with https://gorm.io/gorm[GORM] for SQL testing
+* Used by link:https://onsi.github.io/ginkgo/[Ginkgo] as test framework
+* Used by link:https://github.com/DATA-DOG/go-sqlmock[sqlmock] and link:https://gorm.io/gorm[GORM] for SQL testing
 
-== Get module
+== Install module
 
 ```
-go get -u github.com/itbasis/go-test-utils/v2
+go get -u github.com/itbasis/go-test-utils/v4
 ```
+
+== File utils
+
+* link:files/files.go[] - checks if the path is a regular file and reads its contents
+
+== Database utils
+
+* link:db/sql.go[] - Getting a DB mock and SqlMock without SqlMock options (example option: link:https://github.com/DATA-DOG/go-sqlmock?tab=readme-ov-file#customize-sql-query-matching[QueryMatcherOptions])
+* link:db/gorm.go[] - Getting a GORM and SqlMock instances
+
+== Ginkgo utils
+
+* link:ginkgo/ginkgo.go[] - Adds slog support to tests and code under test
+
+[source,go]
+----
+package demo
+
+import (
+	"testing"
+
+	"github.com/itbasis/go-test-utils/v4/ginkgo"
+)
+
+func TestSuite(t *testing.T) {
+	ginkgo.InitGinkgoSuite(t, "Sample Suite")
+}
+----
+
+Custom slog options
+
+[source,go]
+----
+package demo
+
+import (
+	"log/slog"
+	"testing"
+
+	"github.com/itbasis/go-test-utils/v4/ginkgo"
+)
+
+func TestSuite(t *testing.T) {
+	ginkgo.InitGinkgoSuiteWithSlogOptions(t, "Sample Suite", &slog.HandlerOptions{
+		Level: slog.LevelDebug,
+		AddSource: false,
+	})
+}
+----
