@@ -7,57 +7,56 @@ run:
 linters:
   disable-all: true
   enable:
-    - errcheck
-    - gosimple
-    - govet
-    - ineffassign
-    - staticcheck
-    - unused
     - asasalint
     - bodyclose
     - containedctx
     - contextcheck
     - cyclop
     - dogsled
+    - err113
+    - errcheck
     - errname
     - errorlint
     - exhaustive
     - exportloopref
     - forbidigo
     - funlen
+    - ginkgolinter
     - gocritic
     - gocyclo
-    - err113
     - goimports
-    - mnd
     - gomoddirectives
     - gosec
+    - gosimple
     - govet
     - grouper
+    - ineffassign
+    - interfacebloat
     - misspell
+    - mnd
     - nilerr
+    - nilnil
     - nlreturn
     - noctx
     - prealloc
     - predeclared
     - promlinter
     - revive
-    - wastedassign
+    - sloglint
+    - staticcheck
     - tagliatelle
     - tenv
     - testpackage
     - typecheck
     - unconvert
     - unparam
+    - unused
     - usestdlibvars
     - varnamelen
+    - wastedassign
     - whitespace
     - wrapcheck
     - wsl
-    - ginkgolinter
-    - interfacebloat
-    - sloglint
-    - nilnil
 
 linters-settings:
   varnamelen:

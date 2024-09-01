@@ -5,6 +5,8 @@ go-dependencies:
 	$(eval GOBIN=$(shell go env GOPATH 2>/dev/null)/bin)
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GOBIN) latest
 	#
+	go install github.com/editorconfig-checker/editorconfig-checker/v3/cmd/editorconfig-checker@latest
+	#
 	go install github.com/onsi/ginkgo/v2/ginkgo@latest
 
 go-update: go-dependencies
@@ -15,6 +17,7 @@ go-generate:
 	$(MAKE) go-update
 
 go-lint:
+	editorconfig-checker
 	golangci-lint run
 
 go-unit-tests:
