@@ -9,7 +9,7 @@ require (
 	github.com/onsi/gomega v1.34.2
 	github.com/orandin/slog-gorm v1.4.0
 	gorm.io/driver/postgres v1.5.9
-	gorm.io/gorm v1.25.11
+	gorm.io/gorm v1.25.12
 )
 
 require (
