@@ -11,6 +11,7 @@ linters:
     - bodyclose
     - containedctx
     - contextcheck
+    - copyloopvar
     - cyclop
     - dogsled
     - err113
@@ -18,7 +19,6 @@ linters:
     - errname
     - errorlint
     - exhaustive
-    - exportloopref
     - forbidigo
     - funlen
     - ginkgolinter
