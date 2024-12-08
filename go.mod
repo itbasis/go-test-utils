@@ -6,7 +6,7 @@ require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/dusted-go/logging v1.3.0
 	github.com/onsi/ginkgo/v2 v2.22.0
-	github.com/onsi/gomega v1.35.1
+	github.com/onsi/gomega v1.36.0
 	github.com/orandin/slog-gorm v1.4.0
 	gorm.io/driver/postgres v1.5.9
 	gorm.io/gorm v1.25.12
