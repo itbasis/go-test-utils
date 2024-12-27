@@ -15,7 +15,7 @@ toc::[]
 == Install module
 
 ```
-go get -u github.com/itbasis/go-test-utils/v4
+go get -u github.com/github.com/itbasis/go-test-utils/v4
 ```
 
 == File utils
@@ -31,6 +31,7 @@ import (
 	"os"
 
 	"github.com/itbasis/go-test-utils/v4/files"
+
 	"github.com/onsi/ginkgo/v2"
 )
 
@@ -48,6 +49,7 @@ import (
 	"embed"
 
 	"github.com/itbasis/go-test-utils/v4/files"
+
 	"github.com/onsi/ginkgo/v2"
 )
 
