@@ -1,6 +1,6 @@
-module github.com/itbasis/go-test-utils/v4
+module github.com/itbasis/go-test-utils/v5
 
-go 1.22.10
+go 1.22.11
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
@@ -8,6 +8,7 @@ require (
 	github.com/onsi/ginkgo/v2 v2.22.2
 	github.com/onsi/gomega v1.36.2
 	github.com/orandin/slog-gorm v1.4.0
+	golang.org/x/tools v0.29.0
 	gorm.io/driver/postgres v1.5.11
 	gorm.io/gorm v1.25.12
 )
@@ -30,6 +31,5 @@ require (
 	golang.org/x/sync v0.10.0 // indirect
 	golang.org/x/sys v0.29.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
-	golang.org/x/tools v0.29.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

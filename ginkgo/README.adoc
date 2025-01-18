@@ -1,0 +1,39 @@
+== Ginkgo utils
+
+* link:ginkgo/ginkgo.go[] - Adds slog support to tests and code under test
+
+[source,go]
+----
+package demo_test
+
+import (
+	"testing"
+
+	"github.com/itbasis/go-test-utils/v5/ginkgo"
+)
+
+func TestSuite(t *testing.T) {
+	ginkgo.InitGinkgoSuite(t, "Sample Suite")
+}
+----
+
+Custom slog options
+
+[source,go]
+----
+package demo_test
+
+import (
+	"log/slog"
+	"testing"
+
+	"github.com/itbasis/go-test-utils/v5/ginkgo"
+)
+
+func TestDemoSuite(t *testing.T) {
+	ginkgo.InitGinkgoSuiteWithSlogOptions(t, "Sample Suite", &slog.HandlerOptions{
+		Level: slog.LevelDebug,
+		AddSource: false,
+	})
+}
+----

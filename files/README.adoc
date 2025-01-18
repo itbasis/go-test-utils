@@ -1,0 +1,21 @@
+== File utils
+
+* link:files.go[] - Reads the contents of a file and checks that there was no error while reading.
+
+OS file system (link:files_test.go[]):
+
+[source,go]
+----
+include::files_test.go[tag=snippet]
+include::files_test.go[tag=snippet_os]
+include::files_test.go[tag=snippet_reader_os]
+----
+
+For any `fs.FS` implementation, for example - Embedded FS (link:files_test.go[]):
+
+[source,go]
+----
+include::files_test.go[tag=snippet]
+include::files_test.go[tag=snippet_embedded]
+include::files_test.go[tag=snippet_reader_embedded]
+----
