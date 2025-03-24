@@ -1,11 +1,12 @@
 module github.com/itbasis/go-test-utils/v5
 
 go 1.22.11
+toolchain go1.24.1
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/dusted-go/logging v1.3.0
-	github.com/onsi/ginkgo/v2 v2.22.2
+	github.com/onsi/ginkgo/v2 v2.23.3
 	github.com/onsi/gomega v1.36.2
 	github.com/orandin/slog-gorm v1.4.0
 	golang.org/x/tools v0.30.0
