@@ -45,7 +45,7 @@ linters:
     - sloglint
     - staticcheck
     - tagliatelle
-    - tenv
+    - usetesting
     - testpackage
     - typecheck
     - unconvert
@@ -55,7 +55,6 @@ linters:
     - varnamelen
     - wastedassign
     - whitespace
-    - wrapcheck
     - wsl
 
 linters-settings:

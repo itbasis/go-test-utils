@@ -23,7 +23,8 @@ func ReadFile(fs vfs.Opener, filePath string) []byte {
 
 	defer Close(fileReader)
 
-	bytes, err := io.ReadAll(fileReader)
+	var bytes, err = io.ReadAll(fileReader)
+
 	gomega.Expect(err).To(gomega.Succeed())
 
 	return bytes
@@ -32,7 +33,8 @@ func ReadFile(fs vfs.Opener, filePath string) []byte {
 func FileReader(fs vfs.Opener, filePath string) vfs.ReadSeekCloser {
 	slog.Info("reading file", slog.String("file", filePath))
 
-	rsc, err := fs.Open(filePath)
+	var rsc, err = fs.Open(filePath)
+
 	gomega.Expect(err).To(gomega.Succeed())
 
 	return rsc

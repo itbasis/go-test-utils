@@ -14,6 +14,7 @@ func NewContextWithFakeClock(date, layout string) context.Context {
 
 func FromContextWithFakeClock(ctx context.Context, date, layout string) context.Context {
 	var t, err = time.Parse(layout, date)
+
 	gomega.Expect(err).To(gomega.Succeed())
 
 	return FromContextWithFakeClockAt(ctx, t)
