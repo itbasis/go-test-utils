@@ -7,5 +7,5 @@ import (
 )
 
 func TestFiles(t *testing.T) {
-	ginkgo.InitGinkgoSuite(t, "Files Suite")
+	ginkgo.InitGinkgoSuite(t, "OS Suite tests")
 }

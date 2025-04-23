@@ -18,8 +18,10 @@ toc::[]
 go get -u github.com/github.com/itbasis/go-test-utils/v5
 ----
 
-include::files/README.adoc[]
+include::os/README.adoc[]
 
 include::db/README.adoc[]
+
+include::time/README.adoc[]
 
 include::ginkgo/README.adoc[]

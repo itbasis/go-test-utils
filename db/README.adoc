@@ -1,4 +1,4 @@
 == Database utils
 
 * link:sql.go[] - Getting a DB mock and SqlMock without SqlMock options (example option: link:https://github.com/DATA-DOG/go-sqlmock?tab=readme-ov-file#customize-sql-query-matching[QueryMatcherOptions])
-* link:gorm.go[] - Getting a GORM and SqlMock instances
+* link:gorm.go[] - Getting a link:https://gorm.io[GORM] and link:https://github.com/DATA-DOG/go-sqlmock[SqlMock] instances

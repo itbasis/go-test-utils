@@ -1,0 +1,7 @@
+{
+	"go.toolsEnvVars": {
+		"GOBIN": "D:\\.cache\\go\\1.23.8\\bin"
+	},
+	"go.gopath": "D:\\.cache\\go\\1.23.8",
+	"go.goroot": "D:\\.sdk\\go\\1.23.8"
+}
