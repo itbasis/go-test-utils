@@ -1,4 +1,4 @@
-module github.com/itbasis/go-test-utils/v5
+module github.com/itbasis/go-test-utils/v6
 
 go 1.23.0
 

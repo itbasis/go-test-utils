@@ -15,7 +15,7 @@ toc::[]
 == Install module
 
 ----
-go get -u github.com/github.com/itbasis/go-test-utils/v5
+go get -u github.com/github.com/itbasis/go-test-utils/v6
 ----
 
 include::os/README.adoc[]

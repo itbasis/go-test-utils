@@ -9,7 +9,7 @@ package demo_test
 import (
 	"testing"
 
-	"github.com/itbasis/go-test-utils/v5/ginkgo"
+	"github.com/itbasis/go-test-utils/v6/ginkgo"
 )
 
 func TestSuite(t *testing.T) {
@@ -27,7 +27,7 @@ import (
 	"log/slog"
 	"testing"
 
-	"github.com/itbasis/go-test-utils/v5/ginkgo"
+	"github.com/itbasis/go-test-utils/v6/ginkgo"
 )
 
 func TestDemoSuite(t *testing.T) {

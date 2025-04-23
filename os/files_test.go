@@ -6,7 +6,7 @@ import (
 	"io"
 	"io/fs"
 
-	itbasisTestOs "github.com/itbasis/go-test-utils/v5/os"
+	itbasisTestOs "github.com/itbasis/go-test-utils/v6/os"
 	"golang.org/x/tools/godoc/vfs"
 
 	"github.com/onsi/ginkgo/v2"

@@ -3,7 +3,7 @@ package files_test
 import (
 	"testing"
 
-	"github.com/itbasis/go-test-utils/v5/ginkgo"
+	"github.com/itbasis/go-test-utils/v6/ginkgo"
 )
 
 func TestFiles(t *testing.T) {
