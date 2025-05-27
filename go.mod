@@ -9,7 +9,7 @@ require (
 	github.com/onsi/gomega v1.37.0
 	github.com/orandin/slog-gorm v1.4.0
 	golang.org/x/tools v0.32.0
-	gorm.io/driver/postgres v1.5.11
+	gorm.io/driver/postgres v1.6.0
 	gorm.io/gorm v1.26.0
 )
 
